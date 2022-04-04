@@ -9,3 +9,4 @@
     - include_tasks: tasks/kodi.yml
     - include_tasks: tasks/transmission.yml
     - include_tasks: tasks/fstab.yml
+    - include_tasks: tasks/movieshark.yml

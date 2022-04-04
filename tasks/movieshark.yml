@@ -1,0 +1,2 @@
+- name: Download movieshark repository
+  shell: curl https://repo.mvshrk.xyz/plugins/repository.movieshark/repository.movieshark-2.7.2.zip > ~/movieshark.zip
