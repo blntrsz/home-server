@@ -1,0 +1,23 @@
+- name: Install transmission
+  become: true
+  ansible.builtin.package:
+    name: 
+      - "transmission-cli"
+      - "transmission-common"
+      - "transmission-daemon"
+    
+- name: Stop transmission
+  ansible.builtin.systemd:
+    name: transmission-daemon
+    state: stopped
+
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: ./config/transmission/settings.json
+    dest: /var/lib/transmission-daemon/info/settings.json 
+    
+- name: Start transmission
+  ansible.builtin.systemd:
+    name: transmission-daemon
+    state: started
+

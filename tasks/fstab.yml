@@ -1,0 +1,7 @@
+- name: Mount up device by UUID
+  ansible.posix.mount:
+    path: /home
+    src: UUID=0e71265d-5888-4b02-add4-e62bc4ab89a1 
+    fstype: etx4
+    opts: noatime
+    state: present

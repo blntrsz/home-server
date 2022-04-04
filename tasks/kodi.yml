@@ -1,0 +1,10 @@
+- name: Install kodi
+  become: true
+  ansible.builtin.package:
+    name: 
+      - "kodi"
+    
+- name: Config kodi to autostart on boot
+  become: true
+  shell: sed -i "1i @kodi" /etc/xdg/lxsession/LXDE-pi/autostart 
+

@@ -1,0 +1,11 @@
+- hosts: localhost
+  pre_tasks:
+  - name: Update packages
+    become: true
+    ansible.builtin.package:
+        update_cache: yes
+        upgrade: yes
+  tasks:
+    - include_tasks: tasks/kodi.yml
+    - include_tasks: tasks/transmission.yml
+    - include_tasks: tasks/fstab.yml
